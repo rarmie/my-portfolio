@@ -8,13 +8,13 @@ const socialLinks: SocialLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300 py-10 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-sm">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
 
         <div className="flex gap-4">
           {socialLinks.map((link) => (
-            <a 
+            <a
               key={link.platform}
               href={link.url}
               target="_blank"

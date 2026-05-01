@@ -1,22 +1,26 @@
 'use client';
 import { useState } from 'react';
 import Navigation from './Navigation';
+import DarkModeToggle from '@/src/components/ui/DarkModeToggle';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <span className="text-2xl font-bold text-blue-600">MyPortfolio</span>
 
-        {/* Desktop nav */}
-        <Navigation />
+        {/* Desktop nav + toggle */}
+        <div className="flex items-center gap-6">
+          <Navigation />
+          <DarkModeToggle />
+        </div>
 
-        {/* Hamburger button (mobile) */}
+        {/* Hamburger (mobile) */}
         <button
-          className="md:hidden text-gray-700"
+          className="md:hidden text-gray-700 dark:text-gray-300"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -32,7 +36,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white px-6 pb-4">
+        <div className="md:hidden bg-white dark:bg-gray-900 px-6 pb-4">
           <Navigation mobile={true} onLinkClick={() => setMenuOpen(false)} />
         </div>
       )}
