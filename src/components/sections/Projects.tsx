@@ -1,5 +1,5 @@
-import Card from '@/src/components/ui/Card';
-import { Project } from '@/src/lib/types';
+import Card from '@/components/ui/Card';
+import { Project } from '@/lib/types';
 
 const projects: Project[] = [
   {

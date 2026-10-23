@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import Button from '@/src/components/ui/Button';
+import Button from '@/components/ui/Button';
 
 type FormState = {
   name: string;

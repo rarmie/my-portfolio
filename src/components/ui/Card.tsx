@@ -1,4 +1,4 @@
-import { Project } from '@/src/lib/types';
+import { Project } from '@/lib/types';
 import Button from './Button';
 
 export default function Card({ project }: { project: Project }) {

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Navigation from './Navigation';
-import DarkModeToggle from '@/src/components/ui/DarkModeToggle';
+import DarkModeToggle from '@/components/ui/DarkModeToggle';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

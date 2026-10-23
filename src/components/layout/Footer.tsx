@@ -1,4 +1,4 @@
-import { SocialLink } from '@/src/lib/types';
+import { SocialLink } from '@/lib/types';
 
 const socialLinks: SocialLink[] = [
   { platform: 'GitHub', url: 'https://github.com/yourusername', icon: 'GH' },
