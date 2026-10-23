@@ -8,7 +8,7 @@ export default function Hero() {
     >
       <div className="text-center px-6">
         <h1 className="text-5xl md:text-7xl font-extrabold text-gray-800 dark:text-white mb-4">
-          Hi, I'm <span className="text-blue-600 dark:text-blue-400">Reginald</span>
+          Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Reginald</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4">
           Full Stack Developer

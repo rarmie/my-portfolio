@@ -4,29 +4,19 @@ import { Project } from '@/lib/types';
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Dating Simulator',
-    description: 'A dating simulator game that gives you a personalized dating experience.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    imageUrl: 'https://via.placeholder.com/400x200?text=E-Commerce',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-  },
-  {
-    id: 2,
-    title: 'Task Manager App',
-    description: 'A productivity app with drag-and-drop tasks, deadlines, and team collaboration.',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind'],
-    imageUrl: 'https://via.placeholder.com/400x200?text=Task+Manager',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
+    title: 'Job Tracker',
+    description: 'A job application tracker that fills in a job from a pasted posting or link, then scores your resume against that job’s requirements.',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'FastAPI', 'Python', 'LLM APIs'],
+    imageUrl: '/projects/job-tracker.png',
+    githubUrl: 'https://github.com/rarmie/WorkSpace',
   },
   {
     id: 3,
     title: 'StudyBuddy',
-    description: 'An online tutoring platform that connects tutors and tutees.',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind'],
-    imageUrl: 'https://via.placeholder.com/400x200?text=Weather+App',
-    githubUrl: 'https://github.com',
+    description: 'A peer-to-peer tutoring platform for students — students book and pay tutors, tutors manage sessions and cash out earnings.',
+    technologies: ['Vue 3', 'Vite', 'Pinia', 'Django REST', 'PostgreSQL', 'JWT'],
+    imageUrl: '/projects/studybuddy.webp',
+    githubUrl: 'https://github.com/llariesalinas/studybuddy-ui',
   },
 ];
 

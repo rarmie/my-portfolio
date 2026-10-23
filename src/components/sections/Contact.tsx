@@ -98,7 +98,7 @@ export default function Contact() {
           <div className="mb-6 bg-green-50 dark:bg-green-900 border border-green-200 dark:border-green-700 rounded-xl p-4 text-center">
             <p className="text-green-700 dark:text-green-300 font-semibold">✅ Message sent!</p>
             <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
-              Thanks, I'll get back to you soon.
+              Thanks, I&apos;ll get back to you soon.
             </p>
           </div>
         )}
