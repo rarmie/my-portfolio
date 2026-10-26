@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Reveal from '@/components/ui/Reveal';
 
 const skills = ['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma', 'FastAPI', 'Python', 'LLM APIs'];
@@ -11,9 +12,12 @@ export default function About() {
             About Me
           </h2>
 
-          <img
+          <Image
             src="/profile.jpg"
             alt="Reginald Anthony R. Masangya"
+            width={256}
+            height={256}
+            priority
             className="w-64 h-64 rounded-full object-cover border border-neutral-700 mb-10"
           />
 
