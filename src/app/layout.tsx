@@ -8,8 +8,19 @@ const manrope = Manrope({ subsets: ['latin'], variable: '--font-body' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['500', '700'], variable: '--font-heading' });
 
 export const metadata: Metadata = {
-  title: '/dev',
-  description: 'Personal portfolio built with Next.js and Tailwind CSS',
+  metadataBase: new URL('https://my-portfolio-lake-ten-55.vercel.app'),
+  title: '/dev — Reginald R. Masangya',
+  description: 'Fullstack developer and aspiring software engineer building end-to-end applications, from the database up through the UI.',
+  openGraph: {
+    title: '/dev — Reginald R. Masangya',
+    description: 'Fullstack developer and aspiring software engineer building end-to-end applications, from the database up through the UI.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '/dev — Reginald R. Masangya',
+    description: 'Fullstack developer and aspiring software engineer building end-to-end applications, from the database up through the UI.',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
