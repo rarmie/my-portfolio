@@ -1,4 +1,4 @@
-import { NavigationItem } from '@/src/lib/types';
+import { NavigationItem } from '@/lib/types';
 
 const navItems: NavigationItem[] = [
   { label: 'Home', href: '#home' },
