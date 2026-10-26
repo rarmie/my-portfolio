@@ -42,7 +42,7 @@ export default function FloatingNav() {
 
   return (
     <nav className="hidden md:block fixed top-4 left-1/2 -translate-x-1/2 z-50">
-      <div className="relative flex gap-0.5 rounded-xl bg-black/85 backdrop-blur-md shadow-lg shadow-black/50 px-1.5 pt-2.5 pb-2">
+      <div className="relative flex gap-0.5 rounded-xl border border-neutral-800 bg-black/85 backdrop-blur-md shadow-lg shadow-black/50 px-1.5 pt-2.5 pb-2">
         <span
           className="absolute top-0 left-0 h-[2px] rounded-b-sm bg-white shadow-[0_0_6px_rgba(255,255,255,0.7)] transition-all duration-300 ease-out"
           style={{ width: indicator.width, transform: `translateX(${indicator.left}px)` }}
