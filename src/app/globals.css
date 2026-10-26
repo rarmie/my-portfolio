@@ -1,3 +1,21 @@
 @import "tailwindcss";
 
-@variant dark (&:where(.dark, .dark *));
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.hero-glow {
+  background-image:
+    radial-gradient(circle 16px at 38% 35%, rgba(255, 255, 255, 0.35), transparent 70%),
+    radial-gradient(circle 3px at 38% 35%, rgba(255, 255, 255, 1), transparent 100%),
+    radial-gradient(circle 16px at 68% 55%, rgba(255, 255, 255, 0.3), transparent 70%),
+    radial-gradient(circle 3px at 68% 55%, rgba(255, 255, 255, 0.9), transparent 100%),
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.22), transparent 50%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.09) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.09) 0 1px, transparent 1px 28px);
+  background-attachment: fixed;
+}

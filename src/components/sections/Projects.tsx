@@ -1,4 +1,5 @@
 import Card from '@/components/ui/Card';
+import Reveal from '@/components/ui/Reveal';
 import { Project } from '@/lib/types';
 
 const projects: Project[] = [
@@ -22,14 +23,18 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
-          My Projects
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="projects" className="py-20 border-t border-neutral-900">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <Reveal>
+          <h2 className="text-4xl font-bold mb-12 text-white">
+            My Projects
+          </h2>
+        </Reveal>
+        <div className="flex flex-wrap justify-center gap-8">
           {projects.map((project) => (
-            <Card key={project.id} project={project} />
+            <Reveal key={project.id} className="w-full sm:w-80 text-left">
+              <Card project={project} />
+            </Reveal>
           ))}
         </div>
       </div>

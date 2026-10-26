@@ -9,7 +9,7 @@ const socialLinks: SocialLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300 py-10 transition-colors duration-300">
+    <footer className="bg-black border-t border-neutral-900 text-neutral-400 py-10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-sm">© {new Date().getFullYear()} Reginald R. Masangya. All rights reserved.</p>
 
@@ -20,7 +20,7 @@ export default function Footer() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
+              className="text-neutral-400 hover:text-white transition-colors text-sm font-medium"
             >
               {link.platform}
             </a>

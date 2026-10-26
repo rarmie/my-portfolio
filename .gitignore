@@ -43,3 +43,6 @@ next-env.d.ts
 # local progress notes and carryover files (not part of the repo)
 /progress.md
 /carryover/
+
+# mockup working sessions (decided designs are promoted to docs/mockups/)
+/docs/mockups/sessions/
