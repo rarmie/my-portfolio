@@ -8,7 +8,7 @@ const manrope = Manrope({ subsets: ['latin'], variable: '--font-body' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['500', '700'], variable: '--font-heading' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://my-portfolio-lake-ten-55.vercel.app'),
+  metadataBase: new URL('https://reginald-masangya-dev.vercel.app'),
   title: '/dev — Reginald R. Masangya',
   description: 'Fullstack developer and aspiring software engineer building end-to-end applications, from the database up through the UI.',
   openGraph: {
