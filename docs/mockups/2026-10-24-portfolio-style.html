@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style direction — v4, less card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000000;
+    --panel: #111111;
+    --panel-2: #1A1A1A;
+    --text: #FFFFFF;
+    --text-muted: #8F8F8F;
+    --border: #2B2B2B;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .note {
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: 10px 24px;
+    text-align: center;
+  }
+  .note strong { color: var(--text); }
+  .page { max-width: 760px; margin: 0 auto; padding: 24px 24px 64px; }
+
+  header.site {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4px 32px;
+  }
+  .logo { font-weight: 700; font-size: 15px; }
+  nav.site a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 24px;
+  }
+  nav.site a:hover { color: var(--text); }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text);
+  }
+
+  /* hero — left-aligned, no panel; the headline itself is the anchor */
+  .hero {
+    padding: 8px 0 40px;
+  }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+    max-width: 19ch;
+  }
+  .hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 48ch;
+    margin: 0 0 28px;
+  }
+  .hero .cta-row { display: flex; justify-content: flex-start; gap: 12px; }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn.primary { background: var(--text); color: #000; }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+
+  /* everything below the hero blends into the page — hairline dividers, no boxes */
+  section { padding: 48px 4px; border-top: 1px solid var(--border); }
+
+  /* about */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+  .about-grid h2 { font-size: 24px; font-weight: 700; margin: 0; }
+  .about-grid p { font-size: 15px; line-height: 1.7; color: var(--text-muted); margin: 0 0 16px; }
+  .about-grid p strong { color: var(--text); font-weight: 600; }
+
+  /* work — the image cards are a functional exception: photos need a frame */
+  .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .work-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    aspect-ratio: 4/3;
+  }
+  .work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    filter: grayscale(1) contrast(1.05);
+  }
+  .work-card .caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  }
+  .work-card .caption h3 { font-size: 17px; font-weight: 700; margin: 0 0 2px; }
+  .work-card .caption p { font-size: 13px; color: #C8C8C8; margin: 0; }
+  .work-card .tag {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+  .work-card .tag.filled { background: var(--text); color: #000; }
+  .work-card .tag.outline { background: rgba(0,0,0,0.6); color: var(--text); border: 1px solid var(--border); backdrop-filter: blur(4px); }
+
+  /* skills — plain rows, no box */
+  .skills-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 24px 40px; }
+  .skills-grid h4 { font-size: 16px; font-weight: 700; margin: 0; }
+  .skills-grid p { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
+  .skills-grid .divider { grid-column: 1 / -1; border-top: 1px solid var(--border); margin: 4px 0; }
+
+  /* cta — bold through type, not a box */
+  .cta-block { text-align: left; }
+  .cta-block h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 16px;
+  }
+  .cta-block a.email {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--border);
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 4px 0;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  footer .flinks a { color: var(--text-muted); text-decoration: none; margin-left: 20px; }
+  footer .flinks a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="note">Saved design direction &mdash; hero is left-aligned with no panel; only the project photos keep a boundary. About, Skills, and Contact blend straight into the page.</div>
+
+<div class="page">
+  <header class="site">
+    <div class="logo">Reginald Masangya</div>
+    <nav class="site">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>I'm Reginald, a full-stack developer who builds with LLMs in the loop.</h1>
+    <p>Computer Science student at Central Philippine University, graduating 2027. I build applications end to end — and lately that's meant tools that turn a model's judgment into something consistent and trustworthy.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn primary">See the work</a>
+      <a href="#contact" class="btn ghost">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="eyebrow">About</div>
+    <div class="about-grid">
+      <h2>Who I am</h2>
+      <div>
+        <p>I'm a full-stack developer, aspiring software engineer, and Computer Science student at Central Philippine University, graduating in 2027. I build applications end to end, from the database up through the UI, and I enjoy picking up whatever a problem actually calls for.</p>
+        <p>My two main projects so far: a <strong>job application tracker</strong> that reads a posting and scores your resume against its requirements, and <strong>StudyBuddy</strong>, a peer tutoring platform where students book and pay tutors directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="eyebrow">Recent work</div>
+    <div class="work-grid">
+      <div class="work-card">
+        <img src="2026-10-24-portfolio-style/job-tracker.png" alt="Job Tracker app">
+        <span class="tag filled">Live</span>
+        <div class="caption">
+          <h3>Job Tracker</h3>
+          <p>Next.js · Prisma · FastAPI · LLM APIs</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="2026-10-24-portfolio-style/studybuddy.webp" alt="StudyBuddy app">
+        <span class="tag outline">In development</span>
+        <div class="caption">
+          <h3>StudyBuddy</h3>
+          <p>Vue 3 · Django REST · PostgreSQL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Skills</div>
+    <div class="skills-grid">
+      <h4>Frontend</h4>
+      <p>React, Next.js, TypeScript, Vue, Tailwind CSS — building interfaces that stay fast and legible under real data.</p>
+      <div class="divider"></div>
+      <h4>Backend</h4>
+      <p>Node.js, FastAPI, Python, Prisma, PostgreSQL — the plumbing that keeps the frontend honest.</p>
+      <div class="divider"></div>
+      <h4>AI tooling</h4>
+      <p>Wiring LLM APIs into products where the model's output has to be consistent, not just plausible.</p>
+    </div>
+  </section>
+
+  <section class="cta-block" id="contact">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's work together</h2>
+    <a class="email" href="mailto:rarmmasangya@gmail.com">rarmmasangya@gmail.com</a>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Reginald R. Masangya</div>
+    <div class="flinks">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

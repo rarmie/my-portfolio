@@ -8,16 +8,18 @@ const navItems: NavigationItem[] = [
 ];
 
 interface NavigationProps {
-  mobile?: boolean;
   onLinkClick?: () => void;
 }
 
-export default function Navigation({ mobile = false, onLinkClick }: NavigationProps) {
-  const baseStyle = 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-200';
-  const containerStyle = mobile ? 'flex flex-col gap-4' : 'hidden md:flex gap-8';
+export default function Navigation({ onLinkClick }: NavigationProps) {
+  const baseStyle =
+    'relative text-neutral-400 hover:text-white font-medium transition-colors duration-200 pb-1 ' +
+    "after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-px after:w-full " +
+    'after:bg-white after:scale-x-0 after:origin-left after:transition-transform after:duration-300 ' +
+    'hover:after:scale-x-100';
 
   return (
-    <nav className={containerStyle}>
+    <nav className="flex flex-col gap-4">
       {navItems.map((item) => (
         <a
           key={item.label}

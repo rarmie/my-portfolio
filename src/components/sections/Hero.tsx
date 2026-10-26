@@ -2,19 +2,13 @@ import Button from '@/components/ui/Button';
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
-    >
-      <div className="text-center px-6">
-        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-800 dark:text-white mb-4">
-          Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Reginald</span>
+    <section id="home" className="bg-black hero-glow">
+      <div className="max-w-6xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4">
+          Reginald R. Masangya
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4">
-          Full Stack Developer
-        </p>
-        <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-8">
-          I build beautiful, responsive web applications with modern technologies.
+        <p className="text-xl md:text-2xl text-neutral-400 mb-8">
+          Fullstack Developer · Aspiring Software Engineer
         </p>
         <div className="flex gap-4 justify-center">
           <Button href="#projects" variant="primary">View My Work</Button>

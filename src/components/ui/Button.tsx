@@ -20,9 +20,9 @@ export default function Button({
   const base = 'px-6 py-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer inline-block text-center';
 
   const variants = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700',
-    secondary: 'bg-gray-600 text-white hover:bg-gray-700',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    primary: 'bg-white text-black hover:bg-neutral-200',
+    secondary: 'bg-neutral-700 text-white hover:bg-neutral-600',
+    outline: 'border-2 border-neutral-700 text-white hover:border-white',
   };
 
   const className = `${base} ${variants[variant]}`;
