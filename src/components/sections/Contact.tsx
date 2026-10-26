@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import Button from '@/components/ui/Button';
 
 type FormState = {
   name: string;
@@ -41,10 +40,12 @@ export default function Contact() {
   const [errors, setErrors] = useState<Partial<FormState>>({});
   const [status, setStatus] = useState<Status>('idle');
 
+  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   const validate = (): boolean => {
     const newErrors: Partial<FormState> = {};
     if (!form.name.trim()) newErrors.name = 'Name is required.';
-    if (!form.email.includes('@')) newErrors.email = 'Enter a valid email.';
+    if (!EMAIL_PATTERN.test(form.email.trim())) newErrors.email = 'Enter a valid email.';
     if (form.message.length < 10) newErrors.message = 'Message must be at least 10 characters.';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -147,10 +148,11 @@ export default function Contact() {
 
           {/* Name */}
           <div>
-            <label className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
+            <label htmlFor="contact-name" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
               Name
             </label>
             <input
+              id="contact-name"
               type="text"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -163,10 +165,11 @@ export default function Contact() {
 
           {/* Email */}
           <div>
-            <label className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
+            <label htmlFor="contact-email" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
               Email
             </label>
             <input
+              id="contact-email"
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -179,10 +182,11 @@ export default function Contact() {
 
           {/* Message */}
           <div>
-            <label className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
+            <label htmlFor="contact-message" className="block text-gray-700 dark:text-gray-300 font-medium mb-1">
               Message
             </label>
             <textarea
+              id="contact-message"
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}

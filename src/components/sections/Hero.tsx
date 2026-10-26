@@ -17,12 +17,8 @@ export default function Hero() {
           I build beautiful, responsive web applications with modern technologies.
         </p>
         <div className="flex gap-4 justify-center">
-          <a href="#projects">
-            <Button variant="primary">View My Work</Button>
-          </a>
-          <a href="#contact">
-            <Button variant="outline">Contact Me</Button>
-          </a>
+          <Button href="#projects" variant="primary">View My Work</Button>
+          <Button href="#contact" variant="outline">Contact Me</Button>
         </div>
       </div>
     </section>

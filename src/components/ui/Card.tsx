@@ -28,14 +28,14 @@ export default function Card({ project }: { project: Project }) {
         {/* Action buttons */}
         <div className="flex gap-3">
           {project.githubUrl && (
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline">GitHub</Button>
-            </a>
+            <Button href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="outline">
+              GitHub
+            </Button>
           )}
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary">Live Demo</Button>
-            </a>
+            <Button href={project.liveUrl} target="_blank" rel="noopener noreferrer" variant="primary">
+              Live Demo
+            </Button>
           )}
         </div>
       </div>

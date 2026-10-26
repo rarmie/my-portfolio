@@ -18,13 +18,15 @@ export function useTheme() {
 }
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
+  // Starts at 'light' on both server and client so hydration matches. The
+  // inline script in layout.tsx already applies the real theme to <html>
+  // before paint, so page colors never flash; this only syncs React state
+  // (used solely for the toggle's icon) with what that script already did.
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme') as Theme | null;
-    const preferred = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    setTheme(preferred);
-    document.documentElement.classList.toggle('dark', preferred === 'dark');
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
   }, []);
 
   const toggleTheme = () => {
